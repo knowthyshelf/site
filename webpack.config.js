@@ -42,7 +42,7 @@ const common = {
   plugins: [
     new HtmlWebpackPlugin({
       template: 'node_modules/html-webpack-template/index.ejs',
-      title: 'MGLobel',
+      title: 'KnowThyShelf',
       appMountId: 'app',
       inject: false
     })
