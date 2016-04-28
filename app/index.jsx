@@ -4,10 +4,11 @@ import { Router, Route, Link, browserHistory } from 'react-router';
 
 import Home from './views/Home.jsx';
 import Bookshelf from './components/Bookshelf.jsx';
+import Book from './components/Book';
 
 render((
-  <Router>
+  <Router history={browserHistory}>
     <Route path='/' component={Home} />
-    <Route path='bookshelf' component={Bookshelf} />
+    <Route path='books-the-hobbit' component={Book} />
   </Router>
 ), document.getElementById('app'));
