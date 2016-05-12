@@ -1,14 +1,17 @@
-import React from 'react';
-import { render } from 'react-dom';
-import { Router, Route, Link, browserHistory } from 'react-router';
+import React, { Component } from 'react'
+import { render } from 'react-dom'
+import { Router, Route, browserHistory } from 'react-router'
 
 import Home from './views/Home.jsx';
 import Bookshelf from './components/Bookshelf.jsx';
-import Book from './components/Book';
+import Book from './components/Book.jsx';
 
 render((
   <Router history={browserHistory}>
-    <Route path='/' component={Home} />
-    <Route path='books-the-hobbit' component={Book} />
+    <Route path="/" component={Home} />
+    <Route path="/bookshelf" component={Bookshelf} />
+    <Route path="book">
+      <Route path=":permalink" component={Book}/>
+    </Route>
   </Router>
-), document.getElementById('app'));
+), document.getElementById('app'))

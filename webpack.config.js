@@ -2,7 +2,6 @@ const ghpages = require('gh-pages');
 const path = require('path');
 const merge = require('webpack-merge');
 const webpack = require('webpack');
-const NpmInstallPlugin = require('npm-install-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -27,6 +26,7 @@ const common = {
     extensions: ['', '.js', '.jsx']
   },
   output: {
+    publicPath: "/",
     path: PATHS.build,
     filename: '[name].js'
   },
@@ -80,9 +80,6 @@ if(TARGET === 'start' || !TARGET) {
     },
     plugins: [
       new webpack.HotModuleReplacementPlugin(),
-      new NpmInstallPlugin({
-        save: true // --save
-      })
     ]
   });
 }

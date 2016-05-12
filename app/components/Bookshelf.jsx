@@ -10,7 +10,7 @@ var searchBoxStyles = {
 var bookTemplate = `
 <div style='background-color: gray; height: 300px; width: 200px; margin: 8px;'>
   <div style='height: 100%; width: 100%; text-align: center; display: flex; flex-direction: column; justify-content: center; font-family: sans-serif;'>
-    <a href="/#/book/{{permalink}}" style=' font-size: 20px;'>{{Original Title}}</a><br /> by {{{Author}}}
+    <a href="/book/{{permalink}}" style=' font-size: 20px;'>{{Original Title}}</a><br /> by {{{Author}}}
   </div>
 </div>
 `;

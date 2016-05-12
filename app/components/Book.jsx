@@ -12,26 +12,26 @@ class Book extends React.Component {
       city: '',
       country: '',
       language: '',
-      publishDate: '', 
+      publishDate: '',
       genre: '',
       pages: '',
       printRun: ''
     };
   }
-  
+
   componentDidMount() {
     var client = algoliasearch('5XC2UZIWS0', 'cd170872e1fa42f6c6b5118e2c1f8624');
     var queries = [{
       indexName: 'master-bookshelf',
-      query: 'the-hobbit',
+      query: this.props.params.permalink,
       params: {hitsPerPage: 1},
       restrictSearchableAttributes: 'permalink'
     }];
-    
+
     client.search(queries)
     .then(function searchSuccess(content) {
       var result = content.results[0].hits[0];
-      
+
       this.setState({
         author: result.author,
         coverUrl: result.coverUrl,
@@ -50,7 +50,7 @@ class Book extends React.Component {
       console.error(err);
     });
   }
-  
+
   render() {
     var headerStyles = {
       backgroundColor: 'lightgray',
@@ -60,17 +60,17 @@ class Book extends React.Component {
       alignItems: 'center',
       padding: '10px'
     };
-    
+
     var bookContainerStyles = {
     };
-    
+
     var bookDetailStyles = {
       display: 'flex'
     };
-    
+
     var bookNoteStyles = {
     };
-    
+
     return (
       <div>
         <div style={headerStyles}>
