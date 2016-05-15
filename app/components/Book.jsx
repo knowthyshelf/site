@@ -1,13 +1,14 @@
 import React from 'react';
+import createFragment from 'react-addons-create-fragment';
 import algoliasearch from 'algoliasearch';
 
 class Book extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      title: '',
       author: '',
       coverUrl: '',
-      title: '',
       publisher: '',
       city: '',
       country: '',
@@ -15,7 +16,10 @@ class Book extends React.Component {
       publishDate: '',
       genre: '',
       pages: '',
-      printRun: ''
+      printRun: '',
+      permalink: '',
+      summary: '',
+      sections: []
     };
   }
 
@@ -31,11 +35,10 @@ class Book extends React.Component {
     client.search(queries)
     .then(function searchSuccess(content) {
       var result = content.results[0].hits[0];
-
       this.setState({
+        title: result.commonTitle,
         author: result.author,
         coverUrl: result.coverUrl,
-        title: result.commonTitle,
         publisher: result.publisher,
         city: result.city,
         country: result.country,
@@ -43,7 +46,10 @@ class Book extends React.Component {
         publishDate: result.publishDate,
         genre: result.genre,
         pages: result.pages,
-        printRun: result.printRun
+        printRun: result.printRun,
+        permalink: result.permalink,
+        summary: result.summary,
+        sections: result.sections.map((section) => {return createFragment(section);})
       });
     }.bind(this))
     .catch(function searchError(err) {
@@ -116,6 +122,11 @@ class Book extends React.Component {
                 </li>
               </ul>
             </div>
+          </div>
+          <div>
+            {this.state.sections.map(function(section) {
+              return(<div key={section[0]}><h4>{section[1]}</h4><div dangerouslySetInnerHTML={{__html: section[2]}} /></div>);
+             })}
           </div>
         </div>
       </div>
