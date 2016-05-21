@@ -64,7 +64,7 @@ class Book extends React.Component {
   render() {
 
     return (
-      <div>
+      <div className='container'>
         <div className='header'>
           <h3>KnowThyShelf</h3>
         </div>
@@ -157,10 +157,10 @@ class Book extends React.Component {
               </table>
             </div>
           </div>
-          
+          {/* TODO: turn this into a contentSection component */}
           <div>
-            {this.state.sections.map(function(section) {
-              return(<div key={section[0]}><h3>{section[1]}</h3><hr /><div dangerouslySetInnerHTML={{__html: section[2]}} /></div>);
+            {this.state.sections.reverse().map(function(section) {
+              return(<div key={section[0]} className='content-section'><h3>{section[1]}</h3><hr /><div dangerouslySetInnerHTML={{__html: section[2]}} /></div>);
              })}
           </div>
         </div>

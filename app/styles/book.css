@@ -16,6 +16,10 @@ img {
   padding: 10px;
 }
 
+.container {
+  padding: 30px;
+}
+
 .summary-section {
   display: flex;
   justify-content: space-between;
@@ -27,4 +31,7 @@ img {
 
 .details-section {
   
+}
+
+.content-section {
 }
