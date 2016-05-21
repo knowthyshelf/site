@@ -1,6 +1,7 @@
 import React from 'react';
 import createFragment from 'react-addons-create-fragment';
 import algoliasearch from 'algoliasearch';
+import styles from '../styles/book.css';
 
 class Book extends React.Component {
   constructor(props) {
@@ -31,6 +32,7 @@ class Book extends React.Component {
       params: {hitsPerPage: 1},
       restrictSearchableAttributes: 'permalink'
     }];
+    
 
     client.search(queries)
     .then(function searchSuccess(content) {
@@ -56,76 +58,109 @@ class Book extends React.Component {
       console.error(err);
     });
   }
+  
+  
 
   render() {
-    var headerStyles = {
-      backgroundColor: 'lightgray',
-      textAlign: 'left',
-      minHeight: '40px',
-      display: 'flex',
-      alignItems: 'center',
-      padding: '10px'
-    };
-
-    var bookContainerStyles = {
-    };
-
-    var bookDetailStyles = {
-      display: 'flex'
-    };
-
-    var bookNoteStyles = {
-    };
 
     return (
       <div>
-        <div style={headerStyles}>
+        <div className='header'>
           <h3>KnowThyShelf</h3>
         </div>
-        <div style={bookContainerStyles}>
+        <div>
           <h1>
             {this.state.title}
           </h1>
           <hr />
-          <div style={bookDetailStyles}>
+          
+          <div className='summary-section'>
             <div>
               <img src={this.state.coverUrl} />
             </div>
-            <div style={bookNoteStyles}>
-              <ul style={{listStyle: 'none'}}>
-                <li>
-                  <b>Title:</b> {this.state.title}
-                </li>
-                <li>
-                  <b>Author:</b> {this.state.author}
-                </li>
-                <li>
-                  <b>Publisher:</b> {this.state.publisher}
-                </li>
-                <li>
-                  <b>Location:</b> {this.state.city}, {this.state.country}
-                </li>
-                <li>
-                  <b>Publish Date:</b> {this.state.publishDate}
-                </li>
-                <li>
-                  <b>Language:</b> {this.state.language}
-                </li>
-                <li>
-                  <b>Genre:</b> {this.state.genre}
-                </li>
-                <li>
-                  <b>Pages:</b> {this.state.pages}
-                </li>
-                <li>
-                  <b>Print Run:</b> {this.state.printRun}
-                </li>
-              </ul>
+            <div className='details'>
+              <table>
+                <tbody>
+                  <tr>
+                    <td>
+                      <b>Title:</b> 
+                    </td>
+                    <td>
+                      {this.state.title}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <b>Author:</b> 
+                    </td>
+                    <td>
+                      {this.state.author}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <b>Publisher:</b> 
+                    </td>
+                    <td>
+                      {this.state.publisher}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <b>Location:</b> 
+                    </td>
+                    <td>
+                      {this.state.city}, {this.state.country}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <b>Publish Date:</b> 
+                    </td>
+                    <td>
+                      {this.state.publishDate}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <b>Language:</b> 
+                    </td>
+                    <td>
+                      {this.state.language}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <b>Genre:</b> 
+                    </td>
+                    <td>
+                      {this.state.genre}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <b>Pages:</b> 
+                    </td>
+                    <td>
+                      {this.state.pages}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <b>Print Run:</b> 
+                    </td>
+                    <td>
+                      {this.state.printRun}
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
+          
           <div>
             {this.state.sections.map(function(section) {
-              return(<div key={section[0]}><h4>{section[1]}</h4><div dangerouslySetInnerHTML={{__html: section[2]}} /></div>);
+              return(<div key={section[0]}><h3>{section[1]}</h3><hr /><div dangerouslySetInnerHTML={{__html: section[2]}} /></div>);
              })}
           </div>
         </div>
