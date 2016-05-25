@@ -72,10 +72,8 @@ class Book extends React.Component {
           <hr />
           
           <div className='summary-section'>
-            <div>
-              <img src={this.state.coverUrl} />
-            </div>
-            <div className='details'>
+            <img src={this.state.coverUrl} />
+            <div className='summary-table'>
               <table>
                 <tbody>
                   <tr>
