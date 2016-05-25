@@ -12,7 +12,7 @@ const TARGET= process.env.npm_lifecycle_event;
 const PATHS = {
   app: path.join(__dirname, 'app'),
   build: path.join(__dirname, 'build'),
-  style: path.join(__dirname, 'app/main.scss')
+  style: path.join(__dirname, 'app/styles/main.scss')
 };
 
 process.env.BABEL_ENV = TARGET;
@@ -41,7 +41,7 @@ const common = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'node_modules/html-webpack-template/index.ejs',
+      template: 'app/views/layouts/application.ejs',
       title: 'KnowThyShelf',
       appMountId: 'app',
       inject: false

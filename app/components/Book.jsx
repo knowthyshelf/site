@@ -65,9 +65,6 @@ class Book extends React.Component {
 
     return (
       <div className='container'>
-        <div className='header'>
-          <h3>KnowThyShelf</h3>
-        </div>
         <div>
           <h1>
             {this.state.title}

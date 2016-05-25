@@ -1,0 +1,26 @@
+body {
+  margin: 0px;
+}
+
+nav {
+  height: 60px;
+}
+
+nav{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px 0 20px;
+  
+  input {
+    border-radius: 5px;
+  }
+}
+
+
+.ais-hits {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
