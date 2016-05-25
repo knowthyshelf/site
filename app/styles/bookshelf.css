@@ -1,0 +1,20 @@
+.search-box{
+  margin: 10px 20px 10px 20px;
+}
+
+.ais-search-box {
+  display: inline;
+}
+
+#search-input {
+  padding: 7px;
+  width: 60%;
+  border-radius: 10px; 
+  display: absolute;
+}
+
+#stats-container {
+  display: inline-block;
+  float: right;
+  padding-top: 7px;
+}

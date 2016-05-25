@@ -1,11 +1,6 @@
 import React from 'react';
 import instantsearch from 'instantsearch.js';
-
-var searchBoxStyles = {
-  display: 'flex',
-  justifyContent: 'center',
-  padding: '20px'
-}
+import styles from '../styles/bookshelf.css';
 
 var bookTemplate = `
 <div style='background-color: gray; height: 300px; width: 200px; margin: 8px;'>
@@ -29,7 +24,7 @@ class Bookshelf extends React.Component {
   componentDidMount() {
     this.search.addWidget(
       instantsearch.widgets.searchBox({
-        container: '#search-box',
+        container: '#search-input',
         placeholder: 'Search for books on the shelf...'
       })
     );
@@ -44,13 +39,26 @@ class Bookshelf extends React.Component {
         }
       })
     );
+    
+    this.search.addWidget(
+      instantsearch.widgets.stats({
+        container: '#stats-container',
+        templates: {
+          body: "{{nbHits}} books found"
+        }
+      })
+    );
     this.search.start();
   }
 
   render() {
     return(
-      <div >
-        <div id="search-box" style={searchBoxStyles}></div>
+      <div>
+        <div className='search-box'>
+          <input id="search-input" />
+          <span id='stats-container'></span>
+        </div>
+        <hr />
         <div id="hits-container"></div>
       </div>
     );
