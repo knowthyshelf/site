@@ -154,6 +154,9 @@ class Book extends React.Component {
               </table>
             </div>
           </div>
+          <div class='nav-links'>
+            Jump to: <a href='#publication-history'>Publication History </a> | <a href='#first-identification-points'>First Edition Identification Points</a> | <a href='#later-identification-points'>Later Edition Identification Points</a>
+          </div>
           {/* TODO: turn this into a contentSection component */}
           <div>
             {this.state.sections.reverse().map(function(section) {
