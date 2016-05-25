@@ -5,7 +5,7 @@ import styles from '../styles/bookshelf.css';
 var bookTemplate = `
 <div style='background-color: gray; height: 300px; width: 200px; margin: 8px;'>
   <div style='height: 100%; width: 100%; text-align: center; display: flex; flex-direction: column; justify-content: center; font-family: sans-serif;'>
-    <a href="/book/{{permalink}}" style=' font-size: 20px;'>{{Original Title}}</a><br /> by {{{Author}}}
+    <a href="/book/{{permalink}}" style=' font-size: 20px;'>{{commonTitle}}</a><br /> by {{{author}}}
   </div>
 </div>
 `;
@@ -16,7 +16,7 @@ class Bookshelf extends React.Component {
     this.search = instantsearch({
       appId: '5XC2UZIWS0',
       apiKey: 'cd170872e1fa42f6c6b5118e2c1f8624',
-      indexName: 'master-bookshelf',
+      indexName: 'Books_development',
       urlSync: true
     });
   }

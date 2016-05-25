@@ -27,7 +27,7 @@ class Book extends React.Component {
   componentDidMount() {
     var client = algoliasearch('5XC2UZIWS0', 'cd170872e1fa42f6c6b5118e2c1f8624');
     var queries = [{
-      indexName: 'master-bookshelf',
+      indexName: 'Books_development',
       query: this.props.params.permalink,
       params: {hitsPerPage: 1},
       restrictSearchableAttributes: 'permalink'
