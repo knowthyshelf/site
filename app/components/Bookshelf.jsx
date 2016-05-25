@@ -22,6 +22,7 @@ class Bookshelf extends React.Component {
       appId: '5XC2UZIWS0',
       apiKey: 'cd170872e1fa42f6c6b5118e2c1f8624',
       indexName: 'master-bookshelf',
+      urlSync: true
     });
   }
 
