@@ -7,25 +7,37 @@ nav {
 }
 
 nav{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   padding: 0 20px 0 20px;
   background-color: #5B2E28;
+  
+  .nav-elements {
+    max-width: 1000px;
+    padding-top: 20px;
+    margin: 0 auto;
+  }
   
   a {
     color: #F1F5BA;
   }
   
+  form {
+    float: right;
+  }
+  
   input {
     border-radius: 5px;
   }
-}
+  
 
+}
 
 .ais-hits {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
   align-content: flex-start;
+}
+
+.container {
+  max-width: 1200px;
 }

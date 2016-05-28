@@ -38,10 +38,12 @@
   <% } %>
   
   <nav>
-    <div><a href="/">KNOWTHYSHELF</a></div>
-    <form action='/bookshelf' method='index'>
-      <input name='q' type='text' placeholder='Search for books'/>
-    </form>
+    <div class='nav-elements'>
+      <a href="/">KNOWTHYSHELF</a>
+      <form action='/bookshelf' method='index'>
+        <input name='q' type='text' placeholder='Search for books'/>
+      </form>
+    </div>
   </nav>
 
   <% if (htmlWebpackPlugin.options.appMountId) { %>

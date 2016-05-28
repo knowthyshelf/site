@@ -3,11 +3,11 @@ import instantsearch from 'instantsearch.js';
 import styles from '../styles/bookshelf.css';
 
 var bookTemplate = `
-<div style='background-color: gray; height: 300px; width: 200px; margin: 8px;'>
-  <div style='height: 100%; width: 100%; text-align: center; display: flex; flex-direction: column; justify-content: center; font-family: sans-serif;'>
-    <a href="/book/{{permalink}}" style=' font-size: 20px;'>{{commonTitle}}</a><br /> by {{{author}}}
-  </div>
-</div>
+  <a href="/book/{{permalink}}">
+    <img src={{coverUrl}} />
+  </a>
+  <a href="/book/{{permalink}}" style=' font-size: 20px;'>{{commonTitle}}</a>
+  <br /> by {{{author}}}
 `;
 
 class Bookshelf extends React.Component {
@@ -53,7 +53,7 @@ class Bookshelf extends React.Component {
 
   render() {
     return(
-      <div>
+      <div className='search-results'>
         <div className='search-box'>
           <input id="search-input" />
           <span id='stats-container'></span>

@@ -6,6 +6,17 @@
   display: inline;
 }
 
+.ais-hits--item {
+  height: 300px;
+  width: 200px; 
+  margin: 8px;
+}
+
+.search-results {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
 #search-input {
   padding: 7px;
   width: 60%;
@@ -18,3 +29,4 @@
   float: right;
   padding-top: 7px;
 }
+
