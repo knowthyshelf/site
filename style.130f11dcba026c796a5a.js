@@ -1,1 +1,0 @@
-webpackJsonp([1,3],{0:function(t,s,a){var n=a(613);"string"==typeof n&&(n=[[t.id,n,""]]);a(612)(n,{});n.locals&&(t.exports=n.locals)},613:function(t,s,a){s=t.exports=a(611)(),s.push([t.id,".ais-hits{display:flex;justify-content:space-around;flex-wrap:wrap;align-content:flex-start}",""])}});
