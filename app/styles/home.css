@@ -19,4 +19,9 @@ h3 {
   color: #F1F5BA;
 }
 
+@media only screen and (max-width: 500px) {
+  h1 { font-size: 1.5em; }
+  h3 { font-size: 1em; }
+}
+
 
