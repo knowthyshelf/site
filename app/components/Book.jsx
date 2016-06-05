@@ -24,7 +24,7 @@ class Book extends React.Component {
     };
   }
 
-  componentWillMount() {
+  componentDidMount() {
     var client = algoliasearch('5XC2UZIWS0', 'cd170872e1fa42f6c6b5118e2c1f8624');
     var queries = [{
       indexName: 'Books_development',
