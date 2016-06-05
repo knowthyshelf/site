@@ -4,18 +4,6 @@ import styles from '../styles/home.css';
 
 class Home extends React.Component{
   render() {
-    let bodyStyles = {
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-    }
-    
-    let heroStyles = {
-      backgroundColor: 'lightgray',
-      width: '100%',
-      textAlign: 'center',
-    }
-    
     return(
       <div>
         <div className='hero'>
