@@ -7,7 +7,7 @@
 }
 
 .ais-hits {
-  padding-top: 20px;
+  padding-top: 10px;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
@@ -15,9 +15,12 @@
 }
 
 .ais-hits--item {
+  padding-top: 20px;
+  padding-bottom: 10px;
   height: 300px;
   width: 200px; 
   margin: 8px;
+  text-align: center;
 }
 
 .search-results {
