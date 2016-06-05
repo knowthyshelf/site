@@ -3,11 +3,15 @@ import instantsearch from 'instantsearch.js';
 import styles from '../styles/bookshelf.css';
 
 var bookTemplate = `
-  <a href="/book/{{permalink}}">
-    <img src={{coverUrl}} />
-  </a>
-  <a href="/book/{{permalink}}" style=' font-size: 20px;'>{{commonTitle}}</a>
-  <br /> by {{{author}}}
+  <div class='cover-image'>
+    <a href="/book/{{permalink}}">
+      <img src={{coverUrl}} />
+    </a>
+  </div>
+  <div class='result-details'>
+    <a href="/book/{{permalink}}" style=' font-size: 20px;'>{{commonTitle}}</a>
+    <br /> by {{{author}}}
+  </div>
 `;
 
 class Bookshelf extends React.Component {

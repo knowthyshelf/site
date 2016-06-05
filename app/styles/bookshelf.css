@@ -6,6 +6,14 @@
   display: inline;
 }
 
+.ais-hits {
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+
 .ais-hits--item {
   height: 300px;
   width: 200px; 
