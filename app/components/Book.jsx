@@ -92,7 +92,7 @@ class Book extends React.Component {
                       <b>Author:</b> 
                     </td>
                     <td>
-                      {this.state.author}
+                      <a href={"/bookshelf?q=" + this.state.author}>{this.state.author}</a>  
                     </td>
                   </tr>
                   <tr>
@@ -100,7 +100,7 @@ class Book extends React.Component {
                       <b>Publisher:</b> 
                     </td>
                     <td>
-                      {this.state.publisher}
+                      <a href={"/bookshelf?q=" + this.state.publisher}>{this.state.publisher}</a> 
                     </td>
                   </tr>
                   <tr>
@@ -124,7 +124,7 @@ class Book extends React.Component {
                       <b>Language:</b> 
                     </td>
                     <td>
-                      {this.state.language}
+                      <a href={"/bookshelf?q=" + this.state.language}>{this.state.language}</a> 
                     </td>
                   </tr>
                   <tr>
@@ -132,7 +132,7 @@ class Book extends React.Component {
                       <b>Genre:</b> 
                     </td>
                     <td>
-                      {this.state.genre}
+                      <a href={"/bookshelf?q=" + this.state.genre}>{this.state.genre}</a> 
                     </td>
                   </tr>
                   <tr>
