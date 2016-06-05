@@ -67,7 +67,7 @@ class Book extends React.Component {
   render() {
 
     return (
-      <div className='container'>
+      <div className='book-container'>
         <div>
           <h1>
             {this.state.title}
