@@ -156,11 +156,11 @@ class Book extends React.Component {
             </div>
           </div>
           <div class='nav-links'>
-            Jump to: <a href='#publication-history'>Publication History </a> | <a href='#first-edition-identification-points'>First Edition Identification Points</a> | <a href='#later-editions-identification-points'>Later Editions Identification Points</a>
+            Jump to:  <a href='#first-edition-identification-points'>First Edition Identification Points</a> | <a href='#later-editions-identification-points'>Later Editions Identification Points</a> | <a href='#publication-history'>Publication History </a>
           </div>
           {/* TODO: turn this into a contentSection component */}
           <div>
-            {this.state.sections.reverse().map(function(section) {
+            {this.state.sections.sort(function(a, b) { return a[1] > b[1] ? 1 : -1; }).map(function(section) {
               return(<div key={section[0]} className='content-section'><a name={section[1].replace(/\s+/g, '-').toLowerCase()} /><h3>{section[1]}</h3><hr /><div dangerouslySetInnerHTML={{__html: section[2]}} /></div>);
              })}
           </div>
