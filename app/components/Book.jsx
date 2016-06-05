@@ -24,7 +24,7 @@ class Book extends React.Component {
     };
   }
 
-  componentDidMount() {
+  componentWillMount() {
     var client = algoliasearch('5XC2UZIWS0', 'cd170872e1fa42f6c6b5118e2c1f8624');
     var queries = [{
       indexName: 'Books_development',
@@ -32,7 +32,6 @@ class Book extends React.Component {
       params: {hitsPerPage: 1},
       restrictSearchableAttributes: 'permalink'
     }];
-    
 
     client.search(queries)
     .then(function searchSuccess(content) {
@@ -53,11 +52,15 @@ class Book extends React.Component {
         summary: result.summary,
         sections: result.sections.map((section) => {return createFragment(section);})
       });
+      document.title = this.state.title;
+      
     }.bind(this))
     .catch(function searchError(err) {
       console.error(err);
     });
   }
+  
+  
   
   
 
