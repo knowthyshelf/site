@@ -1,3 +1,11 @@
+h1 {
+  margin-bottom: 5px;
+}
+
+h3 {
+  font-weight: normal;
+}
+
 .hero {
   background-color: #04573B;
   text-align: center;
