@@ -1,3 +1,12 @@
+.book-appear {
+  background-color: gray;
+}
+
+.book-appear-active {
+  background-color: white;
+  transition: background-color 1s ease-in;
+}
+
 .summary-section {
   display: flex;
   justify-content: space-between;
