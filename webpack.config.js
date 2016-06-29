@@ -19,8 +19,8 @@ process.env.BABEL_ENV = TARGET;
 
 const common = {
   entry: {
-    app: PATHS.app,
-    style: PATHS.style
+    style: PATHS.style,
+    app: PATHS.app
   },
   resolve: {
     extensions: ['', '.js', '.jsx']
