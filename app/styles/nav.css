@@ -1,0 +1,31 @@
+nav {
+  height: 60px;
+  padding: 0 20px 0 20px;
+  background-color: #5B2E28;
+}
+  
+.nav-elements {
+  max-width: 1000px;
+  padding-top: 20px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-elements > a {
+  color: #F1F5BA;
+}
+
+.nav-elements > p {
+  margin-top: 0px;
+  color: white;
+}
+
+@media screen and (max-width: 720px) {
+  .nav-elements > p {
+    max-width: 240px;
+    font-size: .8em;
+    padding-left: 20px;
+    text-align: right;
+  }
+}
