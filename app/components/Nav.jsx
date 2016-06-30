@@ -6,11 +6,11 @@ class Nav extends React.Component {
     return(
       <nav>
         <div className='nav-elements'>
-          <a href="/">KNOWTHYSHELF</a>
           <p>
             Identification points and publishing histories for rare and 
             interesting books.
           </p>
+          <a href="/">KNOWTHYSHELF</a>
         </div>
       </nav>
     )
