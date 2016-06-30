@@ -65,6 +65,7 @@ class Book extends React.Component {
 
     return (
       <div className={"book-container " + this.state.loadingClass}>
+        <a href='/'>Return to bookshelf</a>
         <ReactCSSTransitionGroup transitionName="book" transitionAppear={true} transitionAppearTimeout={0} transitionEnterTimeout={500} transitionLeaveTimeout={300}>
           
           <div>
