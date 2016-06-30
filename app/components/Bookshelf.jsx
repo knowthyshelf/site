@@ -10,7 +10,7 @@ var bookTemplate = `
   </div>
   <div class='result-details'>
     <a href="/book/{{permalink}}" style=' font-size: 20px;'>{{commonTitle}}</a>
-    <br /> by {{{author}}}
+    <h5>by {{{author}}}</h5>
   </div>
 `;
 
