@@ -36,11 +36,6 @@ const common = {
         loaders: ['style', 'css'],
         include: PATHS.app
       },
-      {
-        test: /\.scss$/,
-        loaders: ['style', 'css', 'sass'],
-        include: PATHS.style
-      }
     ]
   },
   plugins: [
