@@ -58,6 +58,15 @@ class Bookshelf extends React.Component {
   render() {
     return(
       <div>
+        <nav>
+          <div className='nav-elements'>
+            <a href="/">KNOWTHYSHELF</a>
+            <p>
+              Identification points and publishing histories for rare and 
+              interesting books.
+            </p>
+          </div>
+        </nav>
         <div className='bookshelf'>
           <div className='librarian'>
             <div className='title'>
