@@ -29,7 +29,7 @@ class Bookshelf extends React.Component {
     this.search.addWidget(
       instantsearch.widgets.searchBox({
         container: '#search-input',
-        placeholder: 'Search for books on the shelf...'
+        placeholder: 'Search thy shelf'
       })
     );
 
@@ -48,7 +48,7 @@ class Bookshelf extends React.Component {
       instantsearch.widgets.stats({
         container: '#stats-container',
         templates: {
-          body: "{{nbHits}} books found"
+          body: "Books on thine shelf: {{nbHits}} "
         }
       })
     );
@@ -57,13 +57,23 @@ class Bookshelf extends React.Component {
 
   render() {
     return(
-      <div className='search-results'>
-        <div className='search-box'>
-          <input id="search-input" />
-          <span id='stats-container'></span>
+      <div>
+        <div className='bookshelf'>
+          <div className='librarian'>
+            <div className='title'>
+              <h1>Discover the story</h1>
+              <h2>behind your favorite story.</h2>
+            </div>
+            <div className='search-box'>
+              <input id="search-input" />
+              <div id='stats-container'></div>
+            </div>
+          </div>
         </div>
-        <hr />
-        <div id="hits-container"></div>
+
+        <div className='search-results'>
+          <div id="hits-container"></div>
+        </div>
       </div>
     );
   }

@@ -11,21 +11,30 @@ nav{
   background-color: #5B2E28;
   
   .nav-elements {
+    width: 100%;
     max-width: 1000px;
     padding-top: 20px;
     margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
   }
   
   a {
     color: #F1F5BA;
   }
-  
-  form {
-    float: right;
+
+  p {
+    margin-top: 0px;
+    color: white;
   }
-  
-  input {
-    border-radius: 5px;
+
+  @media screen and (max-width: 720px) {
+    p {
+      max-width: 240px;
+      font-size: .8em;
+      padding-left: 20px;
+      text-align: right;
+    }
   }
 }
 
