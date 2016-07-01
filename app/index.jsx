@@ -9,7 +9,11 @@ import Book from './components/Book.jsx';
 
 render((
   <Router history={browserHistory}>
-    <Route path="/" component={Home} />
+    <Route path="/" component={Home}>
+      <Route path='books'>
+        <Route path=':permalink' component={Librarian} />
+      </Route>
+    </Route>
     <Route path="/about" component={About} />
     <Route path="/librarian" component={Librarian} />
     <Route path="book">

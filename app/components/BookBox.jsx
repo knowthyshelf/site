@@ -1,8 +1,17 @@
 import React from 'react';
+import { browserHistory } from 'react-router'
+
 
 class BookBox extends React.Component {
   constructor(props) {
     super(props);
+    browserHistory.push('/books/'+this.props.book.permalink);
+    document.title = this.props.book.commonTitle;
+  }
+
+  componentWillUnmount() {
+    browserHistory.push('/')
+    document.title = 'KnowThyShelf';
   }
 
   render() {
@@ -142,9 +151,6 @@ class ContentSection extends React.Component {
 
   render() {
     let section = this.props.section;
-
-    console.log(section);
-    
 
     return(
       <div className='content-section'>

@@ -33,15 +33,25 @@ class BookShelf extends React.Component {
     this.handleShelfClicks = this.handleShelfClicks.bind(this);
   }
 
+  componentWillMount() {
+    if (document.URL.includes('books')) {
+      let url = document.URL;
+      let permalink = url.substr(url.lastIndexOf('/') + 1)
+      function findBook(book) { 
+        return book.permalink === permalink;
+      }
+      this.setState({openBook: this.props.books.find(findBook)});
+    }
+  }
+
   handleShelfClicks (event) {
     switch(event.target.className) {
       case 'book-cover':
-        let books = this.props.books
         let permalink = event.target.id;
         function findBook(book) { 
           return book.permalink === permalink;
         }
-        this.setState({openBook: books.find(findBook)});
+        this.setState({openBook: this.props.books.find(findBook)});
         break;
       case 'close-book':
         this.setState({openBook: null});

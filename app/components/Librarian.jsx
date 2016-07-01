@@ -27,7 +27,7 @@ class Librarian extends React.Component {
       instantsearch.widgets.stats({
         container: '#stats-container',
         templates: {
-          body: "Books on thine shelf: {{nbHits}} "
+          body: "Books on thine shelf: {{nbHits}}"
         }
       })
     );

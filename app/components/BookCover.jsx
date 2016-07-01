@@ -6,10 +6,6 @@ class BookCover extends React.Component {
     super(props);
   }
 
-  openBook (book) {
-    // send event to bookshelf to open book
-  }
-
   render() {
     let book = this.props.book;
 

@@ -27,7 +27,6 @@ class Book extends React.Component {
         book: result
       });
       document.title = this.state.book.commonTitle;
-      console.log(result);
     }.bind(this))
     .catch(function searchError(err) {
       console.error(err);
