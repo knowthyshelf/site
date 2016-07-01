@@ -70,15 +70,13 @@ h2 {
   color: #F1F5BA;
 }
 
-
-
 @media only screen and (max-width: 500px) {
   h1 { font-size: 1.3em; }
   h2 { font-size: 1em; }
   .ais-stats--body { font-size: .7em; }
 }
 
-.ais-hits {
+.book-shelf {
   padding-top: 10px;
   display: flex;
   justify-content: space-around;

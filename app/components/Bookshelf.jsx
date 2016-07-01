@@ -1,82 +1,65 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import instantsearch from 'instantsearch.js';
 import styles from '../styles/bookshelf.css';
 
-var bookTemplate = `
-  <div class='cover-image'>
-    <a href="/book/{{permalink}}">
-      <img src={{coverUrl}} />
-    </a>
-  </div>
-  <div class='result-details'>
-    <a href="/book/{{permalink}}" style=' font-size: 20px;'>{{commonTitle}}</a>
-    <h5>by {{{author}}}</h5>
-  </div>
-`;
 
-class Bookshelf extends React.Component {
+instantsearch.widgets.bookShelf = bookShelf;
+
+function bookShelf({container}) {
+  return {
+    getConfiguration: () => ({
+    }),
+
+    render({results}) {
+      ReactDOM.render(
+        <BookShelf
+          results={results.hits}
+        />,
+        container
+      );
+    }
+  };
+}
+
+class BookShelf extends React.Component {
   constructor(props) {
     super(props);
-    this.search = instantsearch({
-      appId: '5XC2UZIWS0',
-      apiKey: 'cd170872e1fa42f6c6b5118e2c1f8624',
-      indexName: 'Books_development',
-      urlSync: true
-    });
-  }
-
-  componentDidMount() {
-    this.search.addWidget(
-      instantsearch.widgets.searchBox({
-        container: '#search-input',
-        placeholder: 'Search thy shelf'
-      })
-    );
-
-    this.search.addWidget(
-      instantsearch.widgets.hits({
-        container: '#hits-container',
-        hitsPerPage: 10,
-        templates: {
-          empty: 'No results',
-          item: bookTemplate,
-        }
-      })
-    );
-    
-    this.search.addWidget(
-      instantsearch.widgets.stats({
-        container: '#stats-container',
-        templates: {
-          body: "Books on thine shelf: {{nbHits}} "
-        }
-      })
-    );
-    this.search.start();
   }
 
   render() {
     return(
-      <div>
-        <div className='bookshelf'>
-          <div className='librarian'>
-            <div className='title'>
-              <h1>Discover the story</h1>
-              <h2>behind your favorite story.</h2>
-            </div>
-            <div className='search-box'>
-              <input id="search-input" />
-              <div id='stats-container'></div>
-            </div>
-          </div>
-        </div>
+      <div className='book-shelf'>
+        {this.props.results.map(function(result) {
+          return <BookCover key={result.objectID} book={result} />;
+        })}
+      </div>
+    );
+  }
+}
 
-        <div className='search-results'>
-          <div id="hits-container"></div>
+class BookCover extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    let book = this.props.book;
+
+    return(
+      <div className='book-cover'>
+        <div className='cover-image'>
+          <a href={'/book/' + book.permalink}>
+            <img src={book.coverUrl} />
+          </a>
+        </div>
+        <div className='result-details'>
+          <a href={'/book/' + book.permalink}>{book.commonTitle}</a>
+          <h5>by {book.author}</h5>
         </div>
       </div>
     );
   }
 }
 
-export default Bookshelf;
+export default bookShelf;

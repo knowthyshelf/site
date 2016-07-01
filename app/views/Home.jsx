@@ -1,14 +1,14 @@
 import React from 'react';
 import Nav from '../components/Nav.jsx';
 import Footer from '../components/Footer.jsx';
-import Bookshelf from '../components/Bookshelf.jsx';
+import Librarian from '../components/Librarian.jsx';
 
 class Home extends React.Component  {
   render() {
     return(
       <div id='container'>
         <Nav />
-        <Bookshelf />
+        <Librarian />
         <Footer />
       </div>
     )
