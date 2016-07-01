@@ -30,7 +30,7 @@ class BookShelf extends React.Component {
     this.state = {
       openBook: null
     }
-    this.handleBooks = this.handleBooks.bind(this);
+    this.handleShelfClicks = this.handleShelfClicks.bind(this);
   }
 
   handleShelfClicks (event) {
