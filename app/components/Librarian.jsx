@@ -1,6 +1,7 @@
 import React from 'react';
 import instantsearch from 'instantsearch.js';
 import bookShelf from './BookShelf.jsx';
+import styles from '../styles/librarian.css';
 
 class Librarian extends React.Component {
   constructor(props) {
@@ -43,8 +44,8 @@ class Librarian extends React.Component {
   render() {
     return(
       <div className='librarian'>
-        <div className='hero'>
-          <div className='hero-items'>
+        <div className='library'>
+          <div className='front-desk'>
             <div className='title'>
               <h1>Discover the story</h1>
               <h2>behind your favorite story.</h2>

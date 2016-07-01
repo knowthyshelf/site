@@ -1,4 +1,4 @@
-.hero {
+.library {
   background-color: #04573B;
   padding: 15px;
   font-family: Arial, Helvetica, sans-serif;
@@ -6,7 +6,7 @@
   margin: 0 auto;
 }
 
-.hero-items {
+.front-desk {
   display: flex;
   align-items: center;
   max-width: 1000px;
