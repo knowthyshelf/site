@@ -99,7 +99,61 @@ class BookBox extends React.Component {
             </div>
           </div>
         </div>
+
+        <div class='nav-sections'>
+          <ContentLinks sections={book.sections.sort(function(a, b) { return a[1] > b[1] ? 1 : -1; })} />
+          {book.sections.sort(function(a, b) { return a[1] > b[1] ? 1 : -1; }).map(function(section) {
+            return(
+              <ContentSection 
+                section={section}
+              />
+            );
+          })}
+        </div>
+
       </div>
+    );
+  }
+}
+
+class ContentLinks extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return(
+      <div class='nav-link'>
+        Jump to:&nbsp; 
+        {this.props.sections.map(function(section) {
+          return(
+            <span><a href={'#'+section.title.replace(/\s+/g, '-').toLowerCase()}>{section.title}</a> | </span>
+          )
+        })}
+      </div>
+    );
+  }
+}
+
+class ContentSection extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    let section = this.props.section;
+
+    console.log(section);
+    
+
+    return(
+      <div className='content-section'>
+        <a name={section.title.replace(/\s+/g, '-').toLowerCase()} />
+        <h3>{section.title}</h3>
+        <hr />
+        <div dangerouslySetInnerHTML={{__html: section.content}} />
+      </div>
+
     );
   }
 }
