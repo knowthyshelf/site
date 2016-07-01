@@ -1,87 +1,20 @@
-h1 {
-  margin-bottom: 0px;
-  padding-bottom: 0px;
-}
-
-h2 {
-  margin-top: 0px;
-  font-weight: normal;
-}
-
-.bookshelf {
-  background-color: #04573B;
-  padding: 15px;
-  font-family: Arial, Helvetica, sans-serif;
-  color: #F1F5E3;
-}
-
-.librarian {
-  max-width: 1000px;
-  display: flex;
-  align-items: center;
-  margin: 0 auto;
-}
-
-.title {
-  width: 50%;
-}
-
-.ais-search-box {
-  display: inline;
-}
-
-#search-input {
-  padding: 7px;
-  width: 90%;
-  border-radius: 7px; 
-  display: absolute;
-  min-height: 30px;
-  font-size: 1.3em;
-  font-family: 'Arima Madurai', cursive;
-  padding-bottom: 0px;
-}
-
-.search-box {
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  text-align: right;
-}
-
-@media screen and (max-width: 900px) {
-  .librarian {
-    display: block;
-    text-align: center;
-  }
-
-  .title {
-    width: 100%;
-  }
-
-  .search-box {
-    width: 100%;
-    text-align: center;
-  }
-}
-
-
-.librarian > h1 {
-  margin-top: 0px;
-  color: #F1F5BA;
-}
-
-@media only screen and (max-width: 500px) {
-  h1 { font-size: 1.3em; }
-  h2 { font-size: 1em; }
-  .ais-stats--body { font-size: .7em; }
-}
-
 .book-shelf {
   padding-top: 10px;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
   align-content: flex-start;
+}
+
+#book-shelf {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+#stats-container {
+  display: inline-block;
+  padding-top: 15px;
+  font-size: 1.2em;
 }
 
 .ais-hits--item {
@@ -94,15 +27,5 @@ h2 {
   font-family: 'Arima Madurai', cursive;
 }
 
-.search-results {
-  max-width: 1000px;
-  margin: 0 auto;
-}
 
-
-#stats-container {
-  display: inline-block;
-  padding-top: 15px;
-  font-size: 1.2em;
-}
 

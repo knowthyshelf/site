@@ -42,9 +42,9 @@ class Librarian extends React.Component {
 
   render() {
     return(
-      <div>
-        <div className='bookshelf'>
-          <div className='librarian'>
+      <div className='librarian'>
+        <div className='hero'>
+          <div className='hero-items'>
             <div className='title'>
               <h1>Discover the story</h1>
               <h2>behind your favorite story.</h2>
@@ -56,9 +56,7 @@ class Librarian extends React.Component {
           </div>
         </div>
 
-        <div className='search-results'>
-          <div id='book-shelf'></div>
-        </div>
+        <div id='book-shelf'></div>
       </div>
     );
   }
