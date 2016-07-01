@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from '../styles/bookcover.css';
 
 class BookCover extends React.Component {
   constructor(props) {

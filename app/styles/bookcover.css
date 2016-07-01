@@ -1,0 +1,9 @@
+.ais-hits--item {
+  padding-top: 20px;
+  padding-bottom: 10px;
+  height: 300px;
+  width: 200px; 
+  margin: 8px;
+  text-align: center;
+  font-family: 'Arima Madurai', cursive;
+}

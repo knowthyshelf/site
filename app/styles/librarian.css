@@ -52,7 +52,7 @@ h2 {
 
 
 @media screen and (max-width: 900px) {
-  .hero-items {
+  .front-desk {
     display: block;
     text-align: center;
   }
