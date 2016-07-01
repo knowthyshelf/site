@@ -11,7 +11,7 @@ class Librarian extends React.Component {
       appId: '5XC2UZIWS0',
       apiKey: 'cd170872e1fa42f6c6b5118e2c1f8624',
       indexName: 'Books_development',
-      urlSync: true
+      urlSync: false
     });
   }
 

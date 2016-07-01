@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import instantsearch from 'instantsearch.js';
+import BookCover from './BookCover.jsx';
+import BookBox from './BookBox.jsx';
 import styles from '../styles/bookshelf.css';
 
 
@@ -14,7 +16,7 @@ function bookShelf({container}) {
     render({results}) {
       ReactDOM.render(
         <BookShelf
-          results={results.hits}
+          books={results.hits}
         />,
         container
       );
@@ -25,159 +27,43 @@ function bookShelf({container}) {
 class BookShelf extends React.Component {
   constructor(props) {
     super(props);
-  }
-
-  render() {
-    return(
-      <div className='book-shelf'>
-        {this.props.results.map(function(result) {
-          return <BookCover key={result.objectID} book={result} />;
-        })}
-      </div>
-    );
-  }
-}
-
-class BookCover extends React.Component {
-  constructor(props) {
-    super(props);
     this.state = {
-      open: false
-    };
+      openBook: null
+    }
+    this.handleBooks = this.handleBooks.bind(this);
   }
 
-  openBook() {
-    this.setState({open: true})
-  }
-
-  closeBook() {
-    this.setState({open: false})
-  }
-
-  render() {
-    let book = this.props.book;
-
-    return(
-      <div className='book-cover'>
-        <div className='cover-image'>
-          <a href={'/book/' + book.permalink}>
-            <img src={book.coverUrl} />
-          </a>
-        </div>
-        <div className='result-details'>
-          <a onClick={this.closeBook.bind(this)} href='#'>{book.commonTitle}</a>
-          <h5>by {book.author}</h5>
-        </div>
-
-        <BookBox book={book} open={this.state.open}/>
-      </div>
-    );
-  }
-}
-
-class BookBox extends React.Component {
-  constructor(props) {
-    super(props);
+  handleBooks (event) {
+    console.log(event.target.className)
+    switch(event.target.className) {
+      case 'book-cover':
+        let books = this.props.books
+        let permalink = event.target.id;
+        function findBook(book) { 
+          return book.permalink === permalink;
+        }
+        this.setState({openBook: books.find(findBook)});
+        break;
+      case 'close-book':
+        console.log('why');
+        this.setState({openBook: null});
+    }
   }
 
   render() {
-    let book = this.props.book;
-    if(this.props.open == true) {
+    if (this.state.openBook) {
       return(
-        <div className='book-container'>
-          <div>
-            <h1>
-              {book.commonTitle}
-            </h1>
-            <hr />
-            
-            <div className='summary-section'>
-              <img src={book.coverUrl} />
-              <div className='summary-table'>
-                <table>
-                  <tbody>
-                    <tr>
-                      <td>
-                        <b>Title:</b> 
-                      </td>
-                      <td>
-                        {book.commonTitle}
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <b>Author:</b> 
-                      </td>
-                      <td>
-                        <a href={"/bookshelf?q=" + book.author}>{book.author}</a>  
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <b>Publisher:</b> 
-                      </td>
-                      <td>
-                        <a href={"/bookshelf?q=" + book.publisher}>{book.publisher}</a> 
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <b>Location:</b> 
-                      </td>
-                      <td>
-                        {book.city}, {book.country}
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <b>Publish Date:</b> 
-                      </td>
-                      <td>
-                        {book.publishDate}
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <b>Language:</b> 
-                      </td>
-                      <td>
-                        <a href={"/bookshelf?q=" + book.language}>{book.language}</a> 
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <b>Genre:</b> 
-                      </td>
-                      <td>
-                        <a href={"/bookshelf?q=" + book.genre}>{book.genre}</a> 
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <b>Pages:</b> 
-                      </td>
-                      <td>
-                        {book.pages}
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <b>Print Run:</b> 
-                      </td>
-                      <td>
-                        {book.printRun}
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
+        <div className='book-shelf' onClick={this.handleBooks}>
+          <BookBox book={this.state.openBook} />
         </div>
       );
     } else {
       return(
-        null
+        <div className='book-shelf' onClick={this.handleBooks}>
+          {this.props.books.map(function(book) {
+            return <BookCover key={book.objectID} book={book}/>;
+          })}
+        </div>
       );
     }
   }
