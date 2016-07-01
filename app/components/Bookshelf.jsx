@@ -33,8 +33,7 @@ class BookShelf extends React.Component {
     this.handleBooks = this.handleBooks.bind(this);
   }
 
-  handleBooks (event) {
-    console.log(event.target.className)
+  handleShelfClicks (event) {
     switch(event.target.className) {
       case 'book-cover':
         let books = this.props.books
@@ -45,7 +44,6 @@ class BookShelf extends React.Component {
         this.setState({openBook: books.find(findBook)});
         break;
       case 'close-book':
-        console.log('why');
         this.setState({openBook: null});
     }
   }
@@ -53,13 +51,13 @@ class BookShelf extends React.Component {
   render() {
     if (this.state.openBook) {
       return(
-        <div className='book-shelf' onClick={this.handleBooks}>
+        <div className='book-shelf' onClick={this.handleShelfClicks}>
           <BookBox book={this.state.openBook} />
         </div>
       );
     } else {
       return(
-        <div className='book-shelf' onClick={this.handleBooks}>
+        <div className='book-shelf' onClick={this.handleShelfClicks}>
           {this.props.books.map(function(book) {
             return <BookCover key={book.objectID} book={book}/>;
           })}
