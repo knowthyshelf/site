@@ -31,6 +31,7 @@ class BookShelf extends React.Component {
       openBook: null
     }
     this.handleShelfClicks = this.handleShelfClicks.bind(this);
+    this.openBook = this.openBook.bind(this);
   }
 
   handleShelfClicks (event) {
@@ -51,7 +52,7 @@ class BookShelf extends React.Component {
   render() {
     if (this.state.openBook) {
       return(
-        <div className='book-shelf' onClick={this.handleShelfClicks}>
+        <div className='book-box' onClick={this.handleShelfClicks}>
           <BookBox book={this.state.openBook} />
         </div>
       );
