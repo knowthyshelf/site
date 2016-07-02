@@ -58,22 +58,30 @@ class BookShelf extends React.Component {
     }
   }
 
+
   render() {
-    if (this.state.openBook) {
+    let books = this.props.books
+    var bookCovers = [];
+
+    for (var i = 0; i < books.length; i++) {
+      bookCovers.push(<BookCover book={books[i]} openBook={this.state.openBook} />);
+    }
+
+    if(this.state.openBook) {
       return(
-        <div className='book-box' onClick={this.handleShelfClicks}>
-          <BookBox book={this.state.openBook} />
+        <div className='book-container' onClick={this.handleShelfClicks}>
+          <span className='close-book'>Return book to shelf</span>
+          <BookCover book={this.state.openBook} openBook={this.state.openBook} />
         </div>
       );
     } else {
-      return(
+      return (
         <div className='book-shelf' onClick={this.handleShelfClicks}>
-          {this.props.books.map(function(book) {
-            return <BookCover key={book.objectID} book={book}/>;
-          })}
+          {bookCovers}
         </div>
       );
     }
+
   }
 }
 

@@ -18,14 +18,12 @@ class BookBox extends React.Component {
     let book = this.props.book;
 
     return(
-      <div className='book-container'>
-        <span className='close-book'>Return book to shelf</span>
+      <div>
         <div>
           <h1>
             {book.commonTitle}
           </h1>
           <hr />
-          
           <div className='summary-section'>
             <img src={book.coverUrl} />
             <div className='summary-table'>

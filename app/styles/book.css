@@ -1,10 +1,15 @@
-.book-appear {
-  background-color: gray;
+@keyframes open-book {
+  from {
+    opacity: .1
+  }
+  to {
+    opacity: 1
+  }
 }
 
-.book-appear-active {
-  background-color: white;
-  transition: background-color 1s ease-in;
+.book-box {
+  opacity: .1;
+  animation: open-book 3s forwards;
 }
 
 .summary-section {
