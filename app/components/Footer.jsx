@@ -10,7 +10,7 @@ class Footer extends React.Component {
           guarantee that the information listed here is 100% correct.
         </p>
         <br />
-        <a href='/about'>About</a> | <a href='/about'>F.A.Q.</a> | <a href='/about'>Glossary</a> | <a href='/about'>Contact</a>
+        <a href='/about'>About</a> | <a href='/faq'>F.A.Q.</a> | <a href='/glossary'>Glossary</a> | <a href='/about'>Contact</a>
         <br />
         <br />
         &copy; { new Date().getFullYear() } KnowThyShelf
