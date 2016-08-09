@@ -22,11 +22,11 @@ class BookCover extends React.Component {
       return(
         <div className='book-cover'>
           <div className='cover-image'>
-            <img id={book.permalink} className='book-cover' src={book.coverUrl} />
+            <img id={book.permalink} className='book-cover' src={book.cover_url} />
           </div>
           <div className='result-details'>
-            <a href={'/book/' + book.permalink}>{book.commonTitle}</a>
-            <h5>by {book.author}</h5>
+            <a href={'/book/' + book.permalink}>{book.title}</a>
+            <h5>by {book.author_first} {book.author}</h5>
           </div>
         </div>
       );
