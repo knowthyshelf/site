@@ -2,6 +2,8 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const merge = require('webpack-merge');
 const validate = require('webpack-validator');
+const Dotenv = require('dotenv-webpack');
+
 
 const parts = require('./libs/parts');
 
@@ -44,6 +46,9 @@ const common = {
       title: 'KnowThyShelf',
       appMountId: 'app',
       inject: false
+    }),
+    new Dotenv({
+      systemvars: true
     })
   ]
 };

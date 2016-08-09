@@ -8,9 +8,9 @@ class Librarian extends React.Component {
     super(props);
 
     this.search = instantsearch({
-      appId: '5XC2UZIWS0',
-      apiKey: 'cd170872e1fa42f6c6b5118e2c1f8624',
-      indexName: 'Books_development',
+      appId: String(process.env.ALGOLIA_APP_ID),
+      apiKey: String(process.env.ALGOLIA_API_KEY),
+      indexName: String(process.env.ALGOLIA_INDEX),
       urlSync: false
     });
   }
