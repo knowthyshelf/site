@@ -1,4 +1,6 @@
 import React from 'react'
+import Nav from '../components/Nav.jsx';
+import Footer from '../components/Footer.jsx';
 import contentful from 'contentful'
 import styles from '../styles/about.css'
 
@@ -27,12 +29,14 @@ class About extends React.Component{
   render() {
     return(
       <div id='about' className='container'>
+        <Nav />
         <div className='content'>
           <h1>About KnowThyShelf</h1>
           <p className='description'>
             { this.state.content }
           </p>
         </div>
+        <Footer />
       </div>
     )
   }

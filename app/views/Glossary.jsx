@@ -1,4 +1,6 @@
 import React from 'react';
+import Nav from '../components/Nav.jsx';
+import Footer from '../components/Footer.jsx';
 import contentful from 'contentful'
 
 class Glossary extends React.Component{
@@ -28,6 +30,7 @@ class Glossary extends React.Component{
   render() {
     return(
       <div id='glossary' className='container'>
+        <Nav />
         <div className='content'>
           <h1>Glossary</h1>
           <div class='terms-list'>
@@ -36,6 +39,7 @@ class Glossary extends React.Component{
             })}
           </div>
         </div>
+        <Footer />
       </div>
     )
   }
