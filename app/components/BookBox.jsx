@@ -6,7 +6,7 @@ class BookBox extends React.Component {
   constructor(props) {
     super(props);
     browserHistory.push('/books/'+this.props.book.permalink);
-    document.title = this.props.book.commonTitle;
+    document.title = this.props.book.title;
   }
 
   componentWillUnmount() {
@@ -21,11 +21,11 @@ class BookBox extends React.Component {
       <div>
         <div>
           <h1>
-            {book.commonTitle}
+            {book.title}
           </h1>
           <hr />
           <div className='summary-section'>
-            <img src={book.coverUrl} />
+            <img src={book.cover_url} />
             <div className='summary-table'>
               <table>
                 <tbody>
@@ -34,7 +34,7 @@ class BookBox extends React.Component {
                       <b>Title:</b> 
                     </td>
                     <td>
-                      {book.commonTitle}
+                      {book.title}
                     </td>
                   </tr>
                   <tr>
@@ -42,7 +42,7 @@ class BookBox extends React.Component {
                       <b>Author:</b> 
                     </td>
                     <td>
-                      <a href={"/bookshelf?q=" + book.author}>{book.author}</a>  
+                      <a href={"/bookshelf?q=" + book.author_first + '' + book.author}>{book.author_first + ' ' + book.author}</a>  
                     </td>
                   </tr>
                   <tr>
@@ -58,7 +58,7 @@ class BookBox extends React.Component {
                       <b>Location:</b> 
                     </td>
                     <td>
-                      {book.city}, {book.country}
+                      {book.publisher_location}, {book.publisher_location_country}
                     </td>
                   </tr>
                   <tr>
@@ -66,7 +66,7 @@ class BookBox extends React.Component {
                       <b>Publish Date:</b> 
                     </td>
                     <td>
-                      {book.publishDate}
+                      {book.published_date}
                     </td>
                   </tr>
                   <tr>
@@ -82,7 +82,7 @@ class BookBox extends React.Component {
                       <b>Genre:</b> 
                     </td>
                     <td>
-                      <a href={"/bookshelf?q=" + book.genre}>{book.genre}</a> 
+                      <a href={"/bookshelf?q=" + book.genres}>{book.genres}</a> 
                     </td>
                   </tr>
                   <tr>
@@ -98,7 +98,7 @@ class BookBox extends React.Component {
                       <b>Print Run:</b> 
                     </td>
                     <td>
-                      {book.printRun}
+                      {book.print_run}
                     </td>
                   </tr>
                 </tbody>
