@@ -15,8 +15,8 @@ class About extends React.Component{
   componentDidMount() {
     let self = this
     let client = contentful.createClient({
-      space: 'y1iouddx4o4w',
-      accessToken: '74f3c6a99d0f8654bdf9c235f75bfe6aca3d30fd18be14072f0f030af322f1a8'
+      space: String(process.env.CONTENTFUL_SPACE),
+      accessToken: String(process.env.CONTENTFUL_ACCESS_TOKEN)
     })
     client.getEntry('57iV45OACs6S8yWQK2y2Yy')
     .then(function(entry) {
