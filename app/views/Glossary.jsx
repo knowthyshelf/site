@@ -17,7 +17,8 @@ class Glossary extends React.Component{
     })
 
     client.getEntries({
-      'content_type': 'glossary'
+      'content_type': 'glossary',
+      'order': 'fields.permalink'
     })
     .then(function(entries) {
       self.setState({termsList: entries.items})
