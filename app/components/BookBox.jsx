@@ -134,7 +134,7 @@ class ContentLinks extends React.Component {
         Jump to:&nbsp; 
         {this.props.sections.map(function(section) {
           return(
-            <span><a href={'#'+section.title.replace(/\s+/g, '-').toLowerCase()}>{section.title}</a> | </span>
+            <span><a href={'#'+section.Title.replace(/\s+/g, '-').toLowerCase()}>{section.Title}</a> | </span>
           )
         })}
       </div>
@@ -152,10 +152,10 @@ class ContentSection extends React.Component {
 
     return(
       <div className='content-section'>
-        <a name={section.title.replace(/\s+/g, '-').toLowerCase()} />
-        <h3>{section.title}</h3>
+        <a name={section.Title.replace(/\s+/g, '-').toLowerCase()} />
+        <h3>{section.Title}</h3>
         <hr />
-        <div dangerouslySetInnerHTML={{__html: section.content}} />
+        <div dangerouslySetInnerHTML={{__html: section.Content}} />
       </div>
 
     );
